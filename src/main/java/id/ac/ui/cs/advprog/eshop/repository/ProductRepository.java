@@ -29,12 +29,12 @@ public class ProductRepository {
         return null;
     }
 
-    public Product update(Product updatedProduct) {
+    public Product edit(Product editedProduct) {
         for (int i = 0; i < productData.size(); i++) {
             Product product = productData.get(i);
-            if (product.getProductId().equals(updatedProduct.getProductId())) {
-                productData.set(i, updatedProduct);
-                return updatedProduct;
+            if (product.getProductId().equals(editedProduct.getProductId())) {
+                productData.set(i, editedProduct);
+                return editedProduct;
             }
         }
         return null;
