@@ -33,10 +33,8 @@ class CreateProductFunctionalTest {
 
     @Test
     void createProduct_isSuccessful(ChromeDriver driver) throws Exception {
-        // Step 1: Buka halaman create product
         driver.get(baseUrl + "/product/create");
 
-        // Step 2: Isi form (Simulasi interaksi user)
         WebElement nameInput = driver.findElement(By.id("nameInput"));
         nameInput.clear();
         nameInput.sendKeys("Sampo Cap Bambang");
@@ -45,11 +43,9 @@ class CreateProductFunctionalTest {
         quantityInput.clear();
         quantityInput.sendKeys("100");
 
-        // Step 3: Klik submit
         WebElement submitButton = driver.findElement(By.cssSelector("button[type='submit']"));
         submitButton.click();
 
-        // Step 4: Verifikasi apakah redirect ke halaman list dan data muncul
         String currentUrl = driver.getCurrentUrl();
         assertEquals(baseUrl + "/product/list", currentUrl);
 
